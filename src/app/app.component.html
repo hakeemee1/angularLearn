@@ -97,3 +97,13 @@ Hello, {{ title }} , version {{ version }}
   <p>(mm/dd/yyy)To day is: {{ today | date:'MM/dd/yyyy' | lowercase }}</p>
 
 </div>
+
+<div>
+  <h1>DI service for fetch api</h1>
+  <p>{{ data }}</p>
+  <h3>when Api called</h3>
+  <div *ngFor="let post of posts">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.id }}:{{ post.body }}</p>
+  </div>
+</div>
