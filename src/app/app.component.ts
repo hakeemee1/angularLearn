@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgStyle, NgIf, NgFor, NgSwitch, NgSwitchDefault, NgSwitchCase } from '@angular/common';
+import { NgClass, NgStyle, NgIf, NgFor, NgSwitch, NgSwitchDefault, NgSwitchCase, DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgClass, NgStyle, NgIf, NgFor, NgSwitch, NgSwitchDefault, NgSwitchCase],
+  imports: [RouterOutlet, FormsModule, NgClass, NgStyle, NgIf, NgFor, NgSwitch, NgSwitchDefault, NgSwitchCase, DatePipe, LowerCasePipe, UpperCasePipe, CurrencyPipe, PercentPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -60,4 +60,21 @@ export class AppComponent {
 
   //ng switch
   grade: string = "C";
+
+
+  //new control flow  angular 17
+  a: number = 1;
+  b: number = 1;
+
+  //for multi element
+  items: any = [
+    {id: 778, name: "Ahmed"},
+    {id: 211, name: "Mohamed"},
+    {id: 222, name: "Ali"},
+  ]
+
+
+  //Pipe
+  textFunc: string = "Ahmed";
+  today: number = Date.now();
 }

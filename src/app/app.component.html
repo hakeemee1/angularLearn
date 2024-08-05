@@ -47,19 +47,53 @@ Hello, {{ title }} , version {{ version }}
   </ng-template>
 </div>
 
-
 <div>
- <h1>ngFor loop student name</h1>
- <ul>
-  <li *ngFor="let name of studentNames; let i = index"> {{i + 1}}:{{ name }}</li>
- </ul>  
+  <h1>ngFor loop student name</h1>
+  <ul>
+    <li *ngFor="let name of studentNames; let i = index">
+      {{ i + 1 }}:{{ name }}
+    </li>
+  </ul>
 </div>
- 
+
 <div [ngSwitch]="grade">
-  <input type="text" [(ngModel)]="grade" placeholder="Enter your grade">
+  <input type="text" [(ngModel)]="grade" placeholder="Enter your grade" />
   <h1>This is switch</h1>
   <p *ngSwitchCase="'A'">Grade : {{ grade }} Excellent</p>
   <p *ngSwitchCase="'B'">Grade : {{ grade }} Good</p>
   <p *ngSwitchCase="'C'">Grade : {{ grade }} Average</p>
   <p *ngSwitchDefault>Grade : {{ grade }} Unknown</p>
+</div>
+
+
+<div>
+  <h1>new control v17</h1>
+  <h1>{{ a + b }}</h1>
+  @if (a > b) { <h1>a > b</h1> } @else if (b<a) { <h1>b > a</h1> } @else { <h1>a = b</h1> }
+</div>
+
+<div>
+  <h1>for multi element</h1>
+  @for (item of items; track item.id; let i = $index) {
+    <ul>
+      
+       <li> {{ i + 1 }}=>{{ item.name }}</li>
+    <li>id is =>>{{ item.id }}</li>
+    </ul>
+   
+  }
+</div>
+
+<div>
+  <h1>Pipe</h1>
+  <p>{{ textFunc | uppercase }}</p>
+  <p>{{ textFunc | lowercase }}</p>
+  <p>To day is: {{ today | date }}</p>
+  <p>(short)To day is: {{ today | date:'short' }}</p>
+  <p>(fullDate)To day is: {{ today | date:'fullDate' | uppercase }}</p>
+  <p>(medium)To day is: {{ today | date:'medium' | lowercase }}</p>
+  <p>(long)To day is: {{ today | date:'long' | uppercase }}</p>
+  <p>(full)To day is: {{ today | date:'full' | uppercase }}</p>
+  <p>(mm/dd/yyy)To day is: {{ today | date:'MM/dd/yyyy' | lowercase }}</p>
+
 </div>
